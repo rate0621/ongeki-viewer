@@ -29,7 +29,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 SECRET_KEY = ')aezn3ym6ucq$ka*=ebxop-x_but(dd!4ocy9ipw#k493qf^28'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
 ## rate add
 ALLOWED_HOSTS = ['*']
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'ongekiviewer.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # 404ページ用に記載
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
