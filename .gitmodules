@@ -1,0 +1,3 @@
+[submodule "ongekiviewer/ongeki-net"]
+	path = ongekiviewer/ongeki-net
+	url = https://github.com/rate0621/ongeki-net.git

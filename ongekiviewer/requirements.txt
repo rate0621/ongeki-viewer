@@ -5,6 +5,8 @@ django-bootstrap4==0.0.7
 django-toolbelt==0.0.1
 flup==1.0.3
 gunicorn==19.9.0
+mod-wsgi==4.6.5
+mod-wsgi-httpd==2.4.35.1
 psycopg2==2.7.6.1
 pytz==2018.7
 static3==0.7.0
