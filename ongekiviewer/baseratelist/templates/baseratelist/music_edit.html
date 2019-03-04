@@ -17,22 +17,9 @@
           <th scope="col">総ベル数</th>
           <th scope="col">ジャンル</th>
           <th scope="col">一言</th>
+          <th scope="col">{{ music_info }}</th>
         </tr>
       </thead>
-      <tbody>
-        {% for music in music_list %}
-        <tr>
-          <th scope="row">{{ music.title }}</th>
-          <td>{{ music.difficult }}</td>
-          <td>{{ music.level }}</td>
-          <td>{{ music.base_rate }}</td>
-          <td>{{ music.total_notes }}</td>
-          <td>{{ music.total_bells }}</td>
-          <td>{{ music.genre }}</td>
-          <td>{{ music.desc }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
     </table>
 {% endblock content %}
 

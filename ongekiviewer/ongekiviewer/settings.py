@@ -30,7 +30,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ')aezn3ym6ucq$ka*=ebxop-x_but(dd!4ocy9ipw#k493qf^28'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
@@ -146,4 +145,10 @@ STATIC_URL = '/static/'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 

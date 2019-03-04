@@ -6,31 +6,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="{% static 'baseratelist/css/bootstrap.min.css' %}">
 
-<!--sorter用-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/css/theme.default.min.css">
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.0/js/jquery.tablesorter.widgets.min.js"></script>
+<script src="{% static 'baseratelist/js/bootstrap.bundle.min.js' %}"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.css"/>
+<script src="https://cdn.datatables.net/t/bs-3.3.6/jqc-1.12.0,dt-1.10.11/datatables.min.js"></script>
+
+ <script>
+    jQuery(function($){
+    // デフォルトの設定を変更
+        $.extend( $.fn.dataTable.defaults, { 
+            language: {
+                url: "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Japanese.json"
+            } 
+        }); 
 
 
-<script type="text/javascript">
-$(function(){ 
-        $("#myTable").tablesorter(); 
-});
+        $("#foo-table").DataTable({
+            // 件数切替機能 無効
+            lengthChange: false,
+            // 検索機能 無効
+            searching: false,
+            // ページング機能 無効
+            paging: false,
+
+            // 左から４番目の列でソート
+            order: [ [ 3, "desc" ] ]
+        })
+
+    });
 </script>
-<!--sorter用-->
 
 
 {% block extra_css %}{% endblock %}
-<title>{% block title %}My books{% endblock %}</title>
+
+<title>{% block title %}{% endblock %}</title>
+
 </head>
 <body>
   <div class="container">
+  <h1>{% block h1 %}{% endblock %}</h1>
+  <p>{% block p1 %}{% endblock p1 %}</p>
+
     {% block content %}
       {{ content }}
     {% endblock %}
   </div>
-<script src="{% static 'baseratelist/js/bootstrap.bundle.min.js' %}"></script>
 {% block extra_js %}{% endblock %}
 </body>
 </html>

@@ -4,6 +4,7 @@ from django.db import models
 
 class Music(models.Model):
     """楽曲情報"""
+    id          = models.IntegerField('ID'   , primary_key=True)
     difficult   = models.CharField('難易度'  , max_length=255)
     genre       = models.CharField('ジャンル', max_length=255)
     title       = models.CharField('曲名'    , max_length=255)
@@ -15,3 +16,8 @@ class Music(models.Model):
     def __str__(self):
         return self.title
 
+class MusicDescription(models.Model):
+    difficult = models.CharField('難易度'  , max_length=255)
+    title     = models.CharField('曲名'    , max_length=255)
+    genre     = models.CharField('ジャンル', max_length=255)
+    desc      = models.CharField('説明'    , max_length=512)
