@@ -16,6 +16,7 @@ import os
 
 ## rate add
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+GOOGLE_ANALYTICS_TRACKING_ID = 'UA-54127093-4'
 
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #STATIC_ROOT = 'staticfiles'
@@ -77,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'ongekiviewer.context_processors.google_analytics',
             ],
         },
     },

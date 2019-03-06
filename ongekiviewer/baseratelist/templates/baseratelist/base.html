@@ -37,6 +37,11 @@
 </script>
 
 
+{% if GOOGLE_ANALYTICS_TRACKING_ID %}
+    {% include 'baseratelist/ga.html' %}
+{% endif %}
+
+
 {% block extra_css %}{% endblock %}
 
 <title>{% block title %}{% endblock %}</title>
