@@ -17,6 +17,7 @@ import os
 ## rate add
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GOOGLE_ANALYTICS_TRACKING_ID = 'UA-54127093-4'
+SITE_ID = 1
 
 #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 #STATIC_ROOT = 'staticfiles'
@@ -50,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'ongekiviewer',
     'baseratelist',
     'bootstrap4',
